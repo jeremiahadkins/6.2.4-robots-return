@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient
 
 var mongo = {
-  connect: async function(database, callback){
+  connect: function(database, callback){
     MongoClient.connect(database, (err, db) => {
       this.db = db;
       callback(err, db);
