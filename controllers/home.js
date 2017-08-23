@@ -1,9 +1,12 @@
-let Robot = require('../models/robot');
+var Robot = require('../models/robot');
 
-let HomeController = {
+var HomeController = {
   index: (req, res) => {
-      let context = {robots: Robot.all()};
-      res.render('index', context);
+    // res.render('index', {robots: robot});
+    Robot.all(function(err, results){
+      console.log('err', err);
+      res.render('index', {robots: results});
+    });
   }
 };
 

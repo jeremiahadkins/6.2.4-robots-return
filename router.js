@@ -1,8 +1,8 @@
-let express = require('express');
-let HomeController = require('./controllers/home');
-let RobotController = require('./controllers/robot');
+var express = require('express');
+var HomeController = require('./controllers/home');
+var RobotController = require('./controllers/robot');
 
-module.exports = ((app) => {
+module.exports = function(app){
   const homeRouter = express.Router();
   const robotRouter = express.Router();
 
@@ -12,4 +12,4 @@ module.exports = ((app) => {
 
   app.use('/', homeRouter);
   app.use('/robot', robotRouter);
-});
+};

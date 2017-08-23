@@ -1,6 +1,7 @@
-let Robot = require('../models/robot');
+var Robot = require('../models/robot');
+// let db = require('../db');
 
-let RobotController = {
+var RobotController = {
   detail: function (req, res) {
     let robotId = req.params.id;
     console.log(robotId);
