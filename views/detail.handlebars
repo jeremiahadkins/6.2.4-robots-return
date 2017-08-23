@@ -1,0 +1,35 @@
+<div class="container-fluid p-3 mb-5" style="background:#fff;">
+  <a href="/" class="small">⇠ Back to all Robots</a>
+</div>
+<div class="container" style="max-width: 600px;">
+  <div class="row">
+    <div class="media">
+      <img class="d-flex mr-3" src="{{robot.avatar}}" alt="{{robot.name}}">
+      <div class="media-body">
+        <h3 class="mt-4">{{robot.name}}</h3>
+        <h6 class="mb-3">{{#if robot.address.city}}{{robot.address.city}},{{/if}} {{robot.address.country}}</h6>
+        <span class="text-muted small">
+          {{#if robot.job}}
+            {{robot.job}} • {{robot.company}}
+          {{else}}
+            <p class="text-danger">Available for hire!</p>
+          {{/if}}
+        </span>        
+      </div>
+    </div>
+  </div>
+  <div class="card row">
+    <div class="p-5">
+      {{#if robot.university}}
+        <p class="text-muted small">Education:</p>
+        <p>{{robot.university}}</p>
+      {{/if}}
+      <p class="text-muted small">Skills:</p>
+      <ul>
+        {{#each robot.skills}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

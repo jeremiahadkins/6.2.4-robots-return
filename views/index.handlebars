@@ -1,0 +1,22 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="card-deck">
+      {{#each robots}}
+        <div class="col-12 col-md-4 d-flex text-center">
+          <div class="card mb-4">
+            <div class="card-block">
+              <img src="{{avatar}}" alt="{{name}}" class="mb-3">
+              <h4><a href="/robot/{{id}}">{{name}}</a></h4>
+              {{#if job}}
+              <p>{{job}}</p>
+              {{else}}
+              <p class="text-danger small">Available for Hire</p>
+              {{/if}}
+              <p class="small text-muted">{{company}}</p>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
